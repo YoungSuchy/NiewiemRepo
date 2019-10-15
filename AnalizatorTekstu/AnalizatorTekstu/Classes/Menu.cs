@@ -51,7 +51,6 @@ namespace TextAnalyzer.Classes
                     case 7:
                         break;
                     case 8:
-                        Environment.Exit(0);
                         break;
                     default:
                         Console.WriteLine(Strings.unknownMenuOption);
