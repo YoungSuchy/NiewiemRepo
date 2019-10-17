@@ -1,6 +1,7 @@
 ﻿using TextAnalyzer.Resources;
 using System;
 using System.Net;
+using System.IO;
 
 namespace TextAnalyzer.Classes
 {
@@ -67,9 +68,7 @@ namespace TextAnalyzer.Classes
             WebClient webClient = new WebClient();
             webClient.DownloadFile("https://s3.zylowski.net/public/input/1.txt", "textfile.txt");
 
-            string txt = System.IO.File.ReadAllText("textfile.txt");
-
-            return txt;
+            return File.ReadAllText("textfile.txt");
         }
     }
 }
