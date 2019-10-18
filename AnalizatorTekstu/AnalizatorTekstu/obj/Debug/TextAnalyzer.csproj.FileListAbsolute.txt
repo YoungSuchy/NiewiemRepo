@@ -1,0 +1,7 @@
+D:\Dokumenty\GiT@\NiewiemRepo\NiewiemRepo\AnalizatorTekstu\AnalizatorTekstu\bin\Debug\AnalizatorTekstu.exe.config
+D:\Dokumenty\GiT@\NiewiemRepo\NiewiemRepo\AnalizatorTekstu\AnalizatorTekstu\bin\Debug\AnalizatorTekstu.exe
+D:\Dokumenty\GiT@\NiewiemRepo\NiewiemRepo\AnalizatorTekstu\AnalizatorTekstu\bin\Debug\AnalizatorTekstu.pdb
+D:\Dokumenty\GiT@\NiewiemRepo\NiewiemRepo\AnalizatorTekstu\AnalizatorTekstu\obj\Debug\TextAnalyzer.csprojAssemblyReference.cache
+D:\Dokumenty\GiT@\NiewiemRepo\NiewiemRepo\AnalizatorTekstu\AnalizatorTekstu\obj\Debug\TextAnalyzer.csproj.CoreCompileInputs.cache
+D:\Dokumenty\GiT@\NiewiemRepo\NiewiemRepo\AnalizatorTekstu\AnalizatorTekstu\obj\Debug\AnalizatorTekstu.exe
+D:\Dokumenty\GiT@\NiewiemRepo\NiewiemRepo\AnalizatorTekstu\AnalizatorTekstu\obj\Debug\AnalizatorTekstu.pdb
