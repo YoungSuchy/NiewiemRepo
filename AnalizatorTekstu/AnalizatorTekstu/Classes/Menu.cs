@@ -63,6 +63,7 @@ namespace TextAnalyzer.Classes
                     case 5:
                         break;
                     case 6:
+                        this.TextFile.CountIndividualLetters();
                         break;
                     case 7:
                         break;
