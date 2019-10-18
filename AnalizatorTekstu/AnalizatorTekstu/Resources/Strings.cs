@@ -34,5 +34,7 @@
 ╚════════════════════════════════════════════════════════════════════════════════╝";
 
         public static string unknownMenuOption = "Nie ma takiej opcji w menu. Wybierz ponownie";
+
+        public static string noFileError = "Error! Plik nie został pobrany!";
     }
 }

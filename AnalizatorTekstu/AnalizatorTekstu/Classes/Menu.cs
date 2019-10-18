@@ -8,6 +8,18 @@ namespace TextAnalyzer.Classes
     public class Menu
     {
         /// <summary>
+        /// DownloadedFile instance.
+        /// </summary>
+        private DownloadedFile TextFile { get; set; }
+
+        /// <summary>
+        /// Creates new instance of the Menu
+        /// </summary>
+        public Menu()
+        {
+            this.TextFile = new DownloadedFile();
+        }
+        /// <summary>
         /// Shows menu on the console
         /// </summary>
         public void Show()
@@ -42,6 +54,7 @@ namespace TextAnalyzer.Classes
                         Console.WriteLine(DownloadTxtFile());
                         break;
                     case 2:
+                        this.TextFile.CountAllLetters();
                         break;
                     case 3:
                         break;
