@@ -69,9 +69,13 @@ namespace TextAnalyzer.Classes
                         this.TextFile.CountIndividualLetters();
                         break;
                     case 7:
+                        this.TextFile.SaveStatistics();
                         break;
                     case 8:
+                        File.Delete(Path.Combine("textfile.txt"));
+                        File.Delete(Path.Combine("statystyki.txt"));
                         Environment.Exit(0);
+
                         break;
                     default:
                         Console.WriteLine(Strings.unknownMenuOption);
