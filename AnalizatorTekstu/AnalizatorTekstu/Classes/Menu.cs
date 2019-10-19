@@ -63,6 +63,7 @@ namespace TextAnalyzer.Classes
                         this.TextFile.CountPunctuationMarks();
                         break;
                     case 5:
+                        this.TextFile.CountSentences();
                         break;
                     case 6:
                         this.TextFile.CountIndividualLetters();
