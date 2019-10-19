@@ -9,6 +9,7 @@ namespace TextAnalyzer.Classes
     class DownloadedFile
     {
         private string filePath = "textfile.txt";
+        private string stats;
 
         /// <summary>
         /// Counts individual letter from downloaded file and prints result to screen.
@@ -37,6 +38,7 @@ namespace TextAnalyzer.Classes
                 foreach (var item in alphabetDictionary)
                 {
                     Console.WriteLine($"{item.Key}: {item.Value}");
+                    stats += ($"{item.Key}: {item.Value}\n");
                 }
             }
         }
@@ -54,6 +56,7 @@ namespace TextAnalyzer.Classes
                     ((byte)c >= 65 && (byte)c <= 90)
                     );
                 Console.WriteLine($"Liczba liter w pliku: {numberOfChars}");
+                stats += ($"Liczba liter w pliku: {numberOfChars}\n");
             }
         }
 
@@ -90,7 +93,7 @@ namespace TextAnalyzer.Classes
                         index++;
                 }
                 Console.WriteLine($"Liczba slow w pliku: {numberOfWords}");
-
+                stats += ($"Liczba slow w pliku: {numberOfWords}\n");
             }
         }
 
@@ -114,6 +117,7 @@ namespace TextAnalyzer.Classes
                     } index++;
                 }
                 Console.WriteLine($"Liczba znaków interpunkcyjnych w pliku: {numberOfPunctuationMarks}");
+                stats += ($"Liczba znaków interpunkcyjnych w pliku: {numberOfPunctuationMarks}\n");
             }
         }
 
@@ -145,8 +149,22 @@ namespace TextAnalyzer.Classes
                     index++;
                 }
                 Console.WriteLine($"Liczba zdań w pliku: {numberOfSentences}");
+                stats += ($"Liczba zdań w pliku: {numberOfSentences}\n");
             }
         }
+
+        /// <summary>
+        /// Save statistics to file
+        /// </summary>
+        public void SaveStatistics()
+        {
+            string docPath = Environment.GetFolderPath(Environment.SpecialFolder.Recent);
+            using (StreamWriter outputFile = new StreamWriter(Path.Combine("statystyki.txt")))
+            {
+                outputFile.WriteLine(stats);
+            }
+        }
+
 
         /// <summary>
         /// Opens downloaded file and returns it
