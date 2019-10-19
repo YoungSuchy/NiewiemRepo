@@ -118,6 +118,37 @@ namespace TextAnalyzer.Classes
         }
 
         /// <summary>
+        /// Count sentences in dowloaded file
+        /// </summary>
+        public void CountSentences()
+        {
+            var file = GetDownlodedFile();
+            if (file != null)
+            {
+                int numberOfSentences = 0;
+                int index = 0;
+                
+
+                while (index < file.Length)
+                {
+                    if (file[index].Equals('.'))
+                    {   
+                        if (file[index - 1].Equals('.')) index++;
+                        numberOfSentences++;
+                        index++;
+                    }
+                    if (file[index].Equals(',') || file[index].Equals(';') || file[index].Equals('?') || file[index].Equals('!'))
+                    {
+                        numberOfSentences++;
+                        index++;
+                    }
+                    index++;
+                }
+                Console.WriteLine($"Liczba zdań w pliku: {numberOfSentences}");
+            }
+        }
+
+        /// <summary>
         /// Opens downloaded file and returns it
         /// </summary>
         /// <returns>Downloaded file as string</returns>
