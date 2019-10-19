@@ -95,6 +95,29 @@ namespace TextAnalyzer.Classes
         }
 
         /// <summary>
+        /// Count punctuation marks in dowloaded file
+        /// </summary>
+        public void CountPunctuationMarks()
+        {
+            var file = GetDownlodedFile();
+            if (file != null)
+            {
+                int numberOfPunctuationMarks = 0;
+                int index = 0;
+
+                while (index < file.Length)
+                {
+                    if(char.IsPunctuation(file[index]))
+                    {
+                        numberOfPunctuationMarks++;
+                        index++;
+                    } index++;
+                }
+                Console.WriteLine($"Liczba znaków interpunkcyjnych w pliku: {numberOfPunctuationMarks}");
+            }
+        }
+
+        /// <summary>
         /// Opens downloaded file and returns it
         /// </summary>
         /// <returns>Downloaded file as string</returns>
