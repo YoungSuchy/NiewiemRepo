@@ -67,6 +67,34 @@ namespace TextAnalyzer.Classes
         }
 
         /// <summary>
+        /// Counts all words in dowloaded file
+        /// </summary>
+        public void CountAllWords()
+        {
+            var file = GetDownlodedFile();
+            if (file != null)
+            {
+                int numberOfWords = 0, index = 0;
+
+                while (index < file.Length && char.IsWhiteSpace(file[index]))
+                    index++;
+
+                while (index < file.Length)
+                {
+                    while (index < file.Length && !char.IsWhiteSpace(file[index]))
+                        index++;
+
+                    numberOfWords++;
+
+                    while (index < file.Length && char.IsWhiteSpace(file[index]))
+                        index++;
+                }
+                Console.WriteLine($"Liczba slow w pliku: {numberOfWords}");
+
+            }
+        }
+
+        /// <summary>
         /// Opens downloaded file and returns it
         /// </summary>
         /// <returns>Downloaded file as string</returns>

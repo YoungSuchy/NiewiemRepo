@@ -57,6 +57,7 @@ namespace TextAnalyzer.Classes
                         this.TextFile.CountAllLetters();
                         break;
                     case 3:
+                        this.TextFile.CountAllWords();
                         break;
                     case 4:
                         break;
