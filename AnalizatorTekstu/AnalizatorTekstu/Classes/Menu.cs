@@ -60,6 +60,7 @@ namespace TextAnalyzer.Classes
                         this.TextFile.CountAllWords();
                         break;
                     case 4:
+                        this.TextFile.CountPunctuationMarks();
                         break;
                     case 5:
                         break;
