@@ -175,7 +175,7 @@ namespace TextAnalyzer.Classes
                         numberOfSentences++;
                         index++;
                     }
-                    if (file[index].Equals(',') || file[index].Equals(';') || file[index].Equals('?') || file[index].Equals('!'))
+                    if (file[index].Equals('?'))
                     {
                         numberOfSentences++;
                         index++;
