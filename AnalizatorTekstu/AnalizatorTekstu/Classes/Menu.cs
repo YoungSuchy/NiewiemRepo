@@ -13,11 +13,17 @@ namespace TextAnalyzer.Classes
         private DownloadedFile TextFile { get; set; }
 
         /// <summary>
+        /// FileDownloader instance.
+        /// </summary>
+        private InputFileSelector FileDownloader { get; set; }
+
+        /// <summary>
         /// Creates new instance of the Menu
         /// </summary>
         public Menu()
         {
             this.TextFile = new DownloadedFile();
+            this.FileDownloader = new InputFileSelector();
         }
         /// <summary>
         /// Shows menu on the console
@@ -51,7 +57,7 @@ namespace TextAnalyzer.Classes
                 switch (menuOption)
                 {
                     case 1:
-                        Console.WriteLine(DownloadTxtFile());
+                        this.FileDownloader.SelectInputFile();
                         break;
                     case 2:
                         this.TextFile.CountVovelsAndConsonants();

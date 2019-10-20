@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\DownloadedFile.cs" />
+    <Compile Include="Classes\InputFileSelector.cs" />
     <Compile Include="Classes\Logo.cs" />
     <Compile Include="Classes\Menu.cs" />
     <Compile Include="Program.cs" />

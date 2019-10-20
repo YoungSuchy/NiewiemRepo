@@ -23,7 +23,7 @@
 ╔════════════════════════════════════════════════════════════════════════════════╗
 ║                                     MENU                                       ║
 ╠════════════════════════════════════════════════════════════════════════════════╣
-║ ( 1 ) - Pobierz plik z internetu                                               ║
+║ ( 1 ) - Wybierz plik wejściowy                                                 ║
 ║ ( 2 ) - Zlicz liczbę samogłosek i spółgłosek w pobranym pliku                  ║
 ║ ( 3 ) - Zlicz liczbę wyrazów w pliku                                           ║
 ║ ( 4 ) - Zlicz liczbę znaków interpunkcyjnych w pliku                           ║
