@@ -23,9 +23,9 @@
 ╔════════════════════════════════════════════════════════════════════════════════╗
 ║                                     MENU                                       ║
 ╠════════════════════════════════════════════════════════════════════════════════╣
-║ ( 1 ) - Pobierz plik z internetu                                               ║
+║ ( 1 ) - Wybierz plik wejściowy                                                 ║
 ║ ( 2 ) - Zlicz liczbę samogłosek i spółgłosek w pobranym pliku                  ║
-║ ( 3 ) - Zlicz liczbę wyrazów w pliku                                           ║
+║ ( 3 ) - Zlicz liczbę wyrazów w pliku (bez wyrazów jednoliterowych)             ║
 ║ ( 4 ) - Zlicz liczbę znaków interpunkcyjnych w pliku                           ║
 ║ ( 5 ) - Zlicz liczbę zdań w pliku                                              ║
 ║ ( 6 ) - Wygeneruj raport                                                       ║
