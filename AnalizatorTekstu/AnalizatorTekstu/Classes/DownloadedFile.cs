@@ -12,6 +12,9 @@ namespace TextAnalyzer.Classes
         private string stats;
         int numberOfSentences, numberOfWords;
 
+        private int numberOfChars;
+
+
         /// <summary>
         /// Counts individual letter from downloaded file and prints result to screen.
         /// </summary>
@@ -50,16 +53,30 @@ namespace TextAnalyzer.Classes
                 {
                     Console.WriteLine($"Liczba wyrazów w pliku nie zostala policzona!");
                 }
+                Console.WriteLine("Samogłoski:");
                 foreach (var item in alphabetDictionary)
                 {
-                    Console.WriteLine($"{item.Key}: {item.Value}");
-                    stats += ($"{item.Key}: {item.Value}\n");
+                    if (ifCharisVovel(item.Key))
+                    {
+                        Console.WriteLine($"{item.Key}: {item.Value}");
+                        stats += ($"{item.Key}: {item.Value}\n");
+                    }
+                }
+                Console.WriteLine("Spółgłoski");
+                foreach (var item in alphabetDictionary)
+                {
+                    if (ifCharisVovel(item.Key) == false)
+                    {
+                        Console.WriteLine($"{item.Key}: {item.Value}");
+                        stats += ($"{item.Key}: {item.Value}\n");
+                    }
                 }
             }
         }
 
         /// <summary>
         /// Counts all letters in downloaded file
+        /// Seperately for vovels and consonants
         /// </summary>
         public void CountAllLetters()
         {
@@ -73,6 +90,38 @@ namespace TextAnalyzer.Classes
                 Console.WriteLine($"Liczba liter w pliku: {numberOfChars}");
                 stats += ($"Liczba liter w pliku: {numberOfChars}\n");
             }
+        }
+
+        /// <summary>
+        /// Seperately counting letters as vovels and consonants
+        /// </summary>
+        public void CountVovelsAndConsonants()
+        {
+            var file = GetDownlodedFile();
+            if (file != null)
+            {
+                int numberOfChars = file.Count(
+                    c => ((byte)c >= 97 && (byte)c <= 122) ||
+                    ((byte)c >= 65 && (byte)c <= 90)
+                );
+
+                int numberOfVovels = file.Count( c => (ifCharisVovel(c).Equals(true)));
+                int numberOfConsonants = numberOfChars-numberOfVovels;
+
+                Console.WriteLine($"Liczba samogłosek: {numberOfVovels}");
+                Console.WriteLine($"LIczba spółgłosek: {numberOfConsonants}");
+                stats += ($"Liczba samogłosek: {numberOfVovels}\n"+$"LIczba spółgłosek: { numberOfConsonants}\n");
+            }
+        }
+
+        /// <summary>
+        /// Check if letter is vovel or consonant
+        /// </summary>
+        public bool ifCharisVovel(char c)
+        {
+            char[] vovels = { 'A', 'E', 'I', 'O', 'U', 'Y', 'a', 'e', 'i', 'o', 'u', 'y'};
+            if (vovels.Contains(c)) return true;
+            else return false;
         }
 
         /// <summary>
