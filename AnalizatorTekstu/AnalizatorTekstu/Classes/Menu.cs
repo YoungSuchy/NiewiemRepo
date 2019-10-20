@@ -54,7 +54,7 @@ namespace TextAnalyzer.Classes
                         Console.WriteLine(DownloadTxtFile());
                         break;
                     case 2:
-                        this.TextFile.CountAllLetters();
+                        this.TextFile.CountVovelsAndConsonants();
                         break;
                     case 3:
                         this.TextFile.CountAllWords();
