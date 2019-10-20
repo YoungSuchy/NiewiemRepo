@@ -10,7 +10,10 @@ namespace TextAnalyzer.Classes
     {
         private string filePath = "textfile.txt";
         private string stats;
+        int numberOfSentences, numberOfWords;
+
         private int numberOfChars;
+
 
         /// <summary>
         /// Counts individual letter from downloaded file and prints result to screen.
@@ -36,10 +39,37 @@ namespace TextAnalyzer.Classes
                     }
                 }
 
+                if(numberOfSentences != 0)
+                    Console.WriteLine($"Liczba zdań w pliku: {numberOfSentences}");
+                else
+                    Console.WriteLine($"Liczba zdań w pliku nie została policzona!");
+                
+
+                if (numberOfWords != 0)
+                {
+                    Console.WriteLine($"Liczba slow w pliku: {numberOfWords}");
+                }
+                else
+                {
+                    Console.WriteLine($"Liczba wyrazów w pliku nie zostala policzona!");
+                }
+                Console.WriteLine("Samogłoski:");
                 foreach (var item in alphabetDictionary)
                 {
-                    Console.WriteLine($"{item.Key}: {item.Value}");
-                    stats += ($"{item.Key}: {item.Value}\n");
+                    if (ifCharisVovel(item.Key))
+                    {
+                        Console.WriteLine($"{item.Key}: {item.Value}");
+                        stats += ($"{item.Key}: {item.Value}\n");
+                    }
+                }
+                Console.WriteLine("Spółgłoski");
+                foreach (var item in alphabetDictionary)
+                {
+                    if (ifCharisVovel(item.Key) == false)
+                    {
+                        Console.WriteLine($"{item.Key}: {item.Value}");
+                        stats += ($"{item.Key}: {item.Value}\n");
+                    }
                 }
             }
         }
@@ -110,7 +140,8 @@ namespace TextAnalyzer.Classes
             var file = GetDownlodedFile();
             if (file != null)
             {
-                int numberOfWords = 0, index = 0;
+                int index = 0;
+                numberOfWords = 0; 
 
                 while (index < file.Length && char.IsWhiteSpace(file[index]))
                     index++;
@@ -163,7 +194,7 @@ namespace TextAnalyzer.Classes
             var file = GetDownlodedFile();
             if (file != null)
             {
-                int numberOfSentences = 0;
+                numberOfSentences = 0;
                 int index = 0;
                 
 
