@@ -110,7 +110,7 @@ namespace TextAnalyzer.Classes
 
                 while (index < file.Length)
                 {
-                    if(char.IsPunctuation(file[index]))
+                    if(file[index] == '?' || file[index] == '.')
                     {
                         numberOfPunctuationMarks++;
                         index++;
