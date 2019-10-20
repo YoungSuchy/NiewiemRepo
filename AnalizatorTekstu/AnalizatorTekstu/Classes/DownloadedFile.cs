@@ -46,7 +46,6 @@ namespace TextAnalyzer.Classes
 
         /// <summary>
         /// Counts all letters in downloaded file
-        /// Seperately for vovels and consonants
         /// </summary>
         public void CountAllLetters()
         {
@@ -104,7 +103,7 @@ namespace TextAnalyzer.Classes
         }
 
         /// <summary>
-        /// Counts all words in dowloaded file
+        /// Counts all words in dowloaded file, excluding one letter words
         /// </summary>
         public void CountAllWords()
         {
@@ -121,18 +120,19 @@ namespace TextAnalyzer.Classes
                     while (index < file.Length && !char.IsWhiteSpace(file[index]))
                         index++;
 
-                    numberOfWords++;
+                    if (!char.IsWhiteSpace(file[index - 2])) numberOfWords++;
+                    if (char.IsWhiteSpace(file[index - 2]) && char.IsNumber(file[index - 1])) numberOfWords++;
 
                     while (index < file.Length && char.IsWhiteSpace(file[index]))
                         index++;
                 }
-                Console.WriteLine($"Liczba slow w pliku: {numberOfWords}");
-                stats += ($"Liczba slow w pliku: {numberOfWords}\n");
+                Console.WriteLine($"Liczba slow w pliku (bez wyrazów jednoliterowych): {numberOfWords}");
+                stats += ($"Liczba slow w pliku (bez wyrazów jednoliterowych): {numberOfWords}\n");
             }
         }
 
         /// <summary>
-        /// Count punctuation marks in dowloaded file
+        /// Count punctuation marks in dowloaded file a ads
         /// </summary>
         public void CountPunctuationMarks()
         {
